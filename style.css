@@ -55,8 +55,8 @@
   z-index: var(--jm-z-sticky);
   display: flex;
   align-items: center;
-  gap: var(--jm-space-6);
-  padding: 14px var(--jm-space-6);
+  gap: var(--jm-space-8);
+  padding: 18px var(--jm-space-8);
   background: var(--jm-surface);
   border-bottom: 1px solid var(--jm-line);
 }
@@ -64,8 +64,9 @@
 .jm-header-logo,
 .jm-header-logo:visited,
 .jm-header-logo:active {
-  font-size: 1.25rem;
-  font-weight: var(--jm-w-bold);
+  font-size: 1.375rem;
+  font-weight: var(--jm-w-black);
+  letter-spacing: -0.01em;
   color: var(--jm-ink) !important;
   text-decoration: none !important;
   white-space: nowrap;
@@ -88,7 +89,7 @@
   align-items: center;
   gap: 4px;
   color: var(--jm-text) !important;
-  font-weight: var(--jm-w-medium);
+  font-weight: var(--jm-w-semibold);
   font-size: var(--jm-body);
   text-decoration: none !important;
   background: none;
