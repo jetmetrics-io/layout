@@ -19,6 +19,7 @@
   --jm-w-medium: 500;
   --jm-w-semibold: 600;
   --jm-w-bold: 700;
+  --jm-w-black: 800;
   --jm-space-2: 8px;
   --jm-space-3: 12px;
   --jm-space-4: 16px;
@@ -59,6 +60,11 @@
   padding: 18px var(--jm-space-8);
   background: var(--jm-surface);
   border-bottom: 1px solid var(--jm-line);
+  transition: box-shadow var(--jm-dur) var(--jm-ease);
+}
+
+.jm-header--scrolled {
+  box-shadow: var(--jm-e1);
 }
 
 .jm-header-logo,

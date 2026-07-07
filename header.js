@@ -33,4 +33,17 @@
       burger.setAttribute("aria-expanded", String(!isOpen));
     });
   }
+
+  var header = document.getElementById("jm-header");
+  if (header) {
+    function updateScrollShadow() {
+      if (window.scrollY > 4) {
+        header.classList.add("jm-header--scrolled");
+      } else {
+        header.classList.remove("jm-header--scrolled");
+      }
+    }
+    window.addEventListener("scroll", updateScrollShadow, { passive: true });
+    updateScrollShadow();
+  }
 })();
