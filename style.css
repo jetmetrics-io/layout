@@ -54,13 +54,18 @@
   position: sticky;
   top: 0;
   z-index: var(--jm-z-sticky);
+  background: var(--jm-surface);
+  border-bottom: 1px solid var(--jm-line);
+  transition: box-shadow var(--jm-dur) var(--jm-ease);
+}
+
+.jm-header-inner {
+  max-width: var(--jm-container);
+  margin: 0 auto;
   display: flex;
   align-items: center;
   gap: var(--jm-space-8);
   padding: 18px var(--jm-space-8);
-  background: var(--jm-surface);
-  border-bottom: 1px solid var(--jm-line);
-  transition: box-shadow var(--jm-dur) var(--jm-ease);
 }
 
 .jm-header--scrolled {

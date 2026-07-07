@@ -1,35 +1,37 @@
 <header class="jm-header" id="jm-header">
-  <a class="jm-header-logo" href="/">Джет<span class="jm-accent">метрикс</span></a>
+  <div class="jm-header-inner">
+    <a class="jm-header-logo" href="/">Джет<span class="jm-accent">метрикс</span></a>
 
-  <nav class="jm-nav">
-    <a href="/" class="jm-nav-link">Главная</a>
+    <nav class="jm-nav">
+      <a href="/" class="jm-nav-link">Главная</a>
 
-    <div class="jm-nav-dropdown" id="jm-nav-hub">
-      <button class="jm-nav-link jm-nav-dropdown-trigger" aria-expanded="false" aria-controls="jm-nav-hub-menu">
-        База знаний
-        <svg class="jm-nav-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <div class="jm-nav-dropdown-menu" id="jm-nav-hub-menu" hidden>
-        <a href="#" class="jm-nav-dropdown-item">Читшиты</a>
-        <a href="#" class="jm-nav-dropdown-item">Атлас Метрик</a>
+      <div class="jm-nav-dropdown" id="jm-nav-hub">
+        <button class="jm-nav-link jm-nav-dropdown-trigger" aria-expanded="false" aria-controls="jm-nav-hub-menu">
+          База знаний
+          <svg class="jm-nav-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="jm-nav-dropdown-menu" id="jm-nav-hub-menu" hidden>
+          <a href="#" class="jm-nav-dropdown-item">Читшиты</a>
+          <a href="#" class="jm-nav-dropdown-item">Атлас Метрик</a>
+        </div>
       </div>
+
+      <a href="#" class="jm-nav-link">Обучение</a>
+      <a href="#" class="jm-nav-link">Консалтинг</a>
+    </nav>
+
+    <div class="jm-header-actions">
+      <a href="#" class="jm-btn jm-btn--primary jm-btn--sm">Войти</a>
     </div>
 
-    <a href="#" class="jm-nav-link">Обучение</a>
-    <a href="#" class="jm-nav-link">Консалтинг</a>
-  </nav>
-
-  <div class="jm-header-actions">
-    <a href="#" class="jm-btn jm-btn--primary jm-btn--sm">Войти</a>
+    <button class="jm-header-burger" id="jm-header-burger" aria-expanded="false" aria-controls="jm-header-mobile" aria-label="Меню">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
-
-  <button class="jm-header-burger" id="jm-header-burger" aria-expanded="false" aria-controls="jm-header-mobile" aria-label="Меню">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </button>
 </header>
 
 <div class="jm-header-mobile" id="jm-header-mobile" hidden>
