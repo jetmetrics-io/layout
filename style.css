@@ -163,6 +163,15 @@
   color: var(--jm-green) !important;
 }
 
+.jm-nav-dropdown-item--top {
+  font-weight: var(--jm-w-semibold);
+}
+
+.jm-nav-dropdown-item--sub {
+  padding-left: calc(var(--jm-space-3) + var(--jm-space-4));
+  color: var(--jm-muted) !important;
+}
+
 .jm-header-actions {
   margin-left: auto;
   display: flex;
