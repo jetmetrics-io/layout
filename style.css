@@ -170,6 +170,12 @@
   gap: var(--jm-space-3);
 }
 
+/* TEMPORARY diagnostic — remove after testing whether the jump follows
+   the button to a new position or stays put on the old spot. */
+#jm-header-login {
+  transform: translateX(-900px);
+}
+
 /* Tilda's own native member userbar widget (avatar icon + logout), injected
    automatically whenever Personal Account is enabled — it overlapped our
    custom login/account button's click area. We built our own account button
