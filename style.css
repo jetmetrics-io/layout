@@ -219,6 +219,14 @@
   font-size: var(--jm-body-s);
 }
 
+#jm-header-login,
+#jm-header-mobile-login {
+  /* Reserves width for "Личный кабинет" so the button doesn't visibly
+     resize when header.js swaps the text after checking login state. */
+  min-width: 13ch;
+  justify-content: center;
+}
+
 .jm-header-burger {
   display: none;
   margin-left: auto;
