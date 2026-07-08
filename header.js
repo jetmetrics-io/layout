@@ -34,6 +34,12 @@
     });
   }
 
+  // TEMPORARY diagnostic: rule out native browser link-drag ghost preview
+  // as the cause of the account button visually "growing" on click-hold.
+  [document.getElementById("jm-header-login"), document.getElementById("jm-header-mobile-login")].forEach(function (btn) {
+    if (btn) btn.draggable = false;
+  });
+
   // Tilda Members writes a localStorage key shaped like
   // tilda_members_profile{projectId} once a visitor logs in. Checking by
   // prefix avoids hardcoding the numeric project id.
