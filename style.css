@@ -165,13 +165,29 @@
 
 .jm-header-actions {
   margin-left: auto;
-  /* Tilda's own native member userbar widget (.tlk-userbar, a small account
-     icon) renders past the edge of this block when Personal Account is
-     enabled. Right margin keeps its click area from overlapping our button. */
-  margin-right: 56px;
   display: flex;
   align-items: center;
   gap: var(--jm-space-3);
+}
+
+/* Tilda's own native member userbar widget (avatar icon + logout), injected
+   automatically whenever Personal Account is enabled — it overlapped our
+   custom login/account button's click area. We built our own account button
+   and logout link, so the native one is redundant; hide it everywhere. */
+.tlk-userbar,
+.tlk-userbar__popup {
+  display: none !important;
+}
+
+.jm-header-logout {
+  font-size: var(--jm-body-s);
+  color: var(--jm-muted);
+  text-decoration: none !important;
+}
+
+.jm-header-logout:hover {
+  color: var(--jm-text);
+  text-decoration: underline !important;
 }
 
 .jm-btn,
@@ -287,6 +303,11 @@
 .jm-header-mobile-cta {
   margin-top: var(--jm-space-4);
   justify-content: center;
+}
+
+.jm-header-mobile-logout {
+  margin-top: var(--jm-space-3);
+  text-align: center;
 }
 
 @media (max-width: 768px) {

@@ -46,6 +46,19 @@
       btn.textContent = "Личный кабинет";
       btn.href = "https://джетметрикс.рф/hub";
     });
+
+    function logout(e) {
+      e.preventDefault();
+      Object.keys(localStorage)
+        .filter(function (key) { return key.indexOf("tilda_members_profile") === 0; })
+        .forEach(function (key) { localStorage.removeItem(key); });
+      window.location.reload();
+    }
+    [document.getElementById("jm-header-logout"), document.getElementById("jm-header-mobile-logout")].forEach(function (link) {
+      if (!link) return;
+      link.hidden = false;
+      link.addEventListener("click", logout);
+    });
   }
 
   var header = document.getElementById("jm-header");
