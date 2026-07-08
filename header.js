@@ -67,6 +67,13 @@
     });
   }
 
+  // TEMPORARY diagnostic: rule out password-manager / native autofill
+  // heuristics keyed off "login"-like button text. Runs last so it wins
+  // over the isMember block above regardless of login state.
+  [document.getElementById("jm-header-login"), document.getElementById("jm-header-mobile-login")].forEach(function (btn) {
+    if (btn) btn.textContent = "Тест123";
+  });
+
   // Tilda's own userbar widget (.tlk-userbar) sets its display via an
   // inline style from its own script, which beats a plain CSS rule. Force
   // it hidden via JS instead, and keep re-forcing it: Tilda's script may
