@@ -165,6 +165,10 @@
 
 .jm-header-actions {
   margin-left: auto;
+  /* Tilda's own native member userbar widget (.tlk-userbar, a small account
+     icon) renders past the edge of this block when Personal Account is
+     enabled. Right margin keeps its click area from overlapping our button. */
+  margin-right: 56px;
   display: flex;
   align-items: center;
   gap: var(--jm-space-3);
