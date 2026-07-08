@@ -34,12 +34,6 @@
     });
   }
 
-  // TEMPORARY diagnostic: rule out native browser link-drag ghost preview
-  // as the cause of the account button visually "growing" on click-hold.
-  [document.getElementById("jm-header-login"), document.getElementById("jm-header-mobile-login")].forEach(function (btn) {
-    if (btn) btn.draggable = false;
-  });
-
   // Tilda Members writes a localStorage key shaped like
   // tilda_members_profile{projectId} once a visitor logs in. Checking by
   // prefix avoids hardcoding the numeric project id.
@@ -66,17 +60,6 @@
       link.addEventListener("click", logout);
     });
   }
-
-  // TEMPORARY diagnostic: rule out password-manager / native autofill
-  // heuristics keyed off "login" in text, id, or href. Runs last so it
-  // wins over the isMember block above regardless of login state.
-  [document.getElementById("jm-header-login"), document.getElementById("jm-header-mobile-login")].forEach(function (btn) {
-    if (!btn) return;
-    btn.textContent = "Тест123";
-    btn.id = "zz-neutral-" + Math.random().toString(36).slice(2);
-    btn.href = "https://джетметрикс.рф/zz-test-neutral";
-    btn.setAttribute("autocomplete", "off");
-  });
 
   // Tilda's own userbar widget (.tlk-userbar) sets its display via an
   // inline style from its own script, which beats a plain CSS rule. Force
