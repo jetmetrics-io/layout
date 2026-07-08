@@ -61,6 +61,24 @@
     });
   }
 
+  // Tilda's own userbar widget (.tlk-userbar) sets its display via an
+  // inline style from its own script, which beats a plain CSS rule. Force
+  // it hidden via JS instead, and keep re-forcing it: Tilda's script may
+  // re-apply the inline style later (e.g. on resize, or after member data
+  // loads), so a one-time hide on page load isn't reliable.
+  function hideNativeUserbar() {
+    document.querySelectorAll(".tlk-userbar").forEach(function (el) {
+      el.style.setProperty("display", "none", "important");
+    });
+  }
+  hideNativeUserbar();
+  new MutationObserver(hideNativeUserbar).observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["style", "class"],
+  });
+
   var header = document.getElementById("jm-header");
   if (header) {
     function updateScrollShadow() {
