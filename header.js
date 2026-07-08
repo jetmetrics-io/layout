@@ -34,6 +34,20 @@
     });
   }
 
+  // Tilda Members writes a localStorage key shaped like
+  // tilda_members_profile{projectId} once a visitor logs in. Checking by
+  // prefix avoids hardcoding the numeric project id.
+  var isMember = Object.keys(localStorage).some(function (key) {
+    return key.indexOf("tilda_members_profile") === 0;
+  });
+  if (isMember) {
+    [document.getElementById("jm-header-login"), document.getElementById("jm-header-mobile-login")].forEach(function (btn) {
+      if (!btn) return;
+      btn.textContent = "Личный кабинет";
+      btn.href = "https://джетметрикс.рф/hub";
+    });
+  }
+
   var header = document.getElementById("jm-header");
   if (header) {
     function updateScrollShadow() {
