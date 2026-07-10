@@ -1,26 +1,31 @@
 (function () {
-  var trigger = document.querySelector(".jm-nav-dropdown-trigger");
-  var menu = document.getElementById("jm-nav-hub-menu");
-  var dropdown = document.getElementById("jm-nav-hub");
+  // Every page of a section lights up that section's menu item — the Хаб
+  // знаний item stays lit on the hub's own pages (/hub, /cheatsheets, …),
+  // not just on /knowledge.
+  var SECTION_BY_SLUG = {
+    "": "home",
+    "knowledge": "knowledge",
+    "hub": "knowledge",
+    "cheatsheets": "knowledge",
+    "hub-cheatsheets": "knowledge",
+    "atlas": "knowledge",
+    "hub-atlas": "knowledge",
+    "learning": "learning",
+    "hub-learning": "learning",
+    "consulting": "consulting",
+  };
 
-  if (trigger && menu && dropdown) {
-    function closeMenu() {
-      menu.hidden = true;
-      trigger.setAttribute("aria-expanded", "false");
-    }
-    function openMenu() {
-      menu.hidden = false;
-      trigger.setAttribute("aria-expanded", "true");
-    }
-    trigger.addEventListener("click", function (e) {
-      e.stopPropagation();
-      if (menu.hidden) openMenu(); else closeMenu();
-    });
-    document.addEventListener("click", function (e) {
-      if (!dropdown.contains(e.target)) closeMenu();
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeMenu();
+  var slug = location.pathname
+    .toLowerCase()
+    .replace(/\.html$/, "")
+    .replace(/\/+$/, "")
+    .split("/")
+    .pop();
+  var section = SECTION_BY_SLUG[slug];
+
+  if (section) {
+    document.querySelectorAll('[data-nav="' + section + '"]').forEach(function (link) {
+      link.setAttribute("aria-current", "page");
     });
   }
 
