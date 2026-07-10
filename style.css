@@ -43,6 +43,22 @@
   font-family: var(--jm-font-sans);
 }
 
+/* Press a link, twitch the mouse a pixel, and the browser starts dragging it:
+   it paints a translucent copy of the element that follows the cursor. That
+   copy is what reads as the button "jumping" or growing under the click — it
+   never shows up in computed styles or in a screenshot, because the OS draws
+   it. `-webkit-user-drag` is the switch Chrome and Safari actually honour for
+   link drag images; the `draggable="false"` attribute alone did not stop it. */
+.jm-nav-link,
+.jm-header-mobile-link,
+.jm-header-logo,
+.jm-header-logout,
+.jm-btn {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .jm-header *, .jm-header *::before, .jm-header *::after,
 .jm-header-mobile *, .jm-header-mobile *::before, .jm-header-mobile *::after,
 .jm-footer *, .jm-footer *::before, .jm-footer *::after {
