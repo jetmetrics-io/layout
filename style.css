@@ -179,6 +179,12 @@
   transition: background var(--jm-dur) var(--jm-ease), border-color var(--jm-dur) var(--jm-ease);
 }
 
+/* display: inline-flex у .jm-btn перебивает браузерное [hidden] { display: none },
+   поэтому скрытая через JS кнопка всё равно оставалась видимой */
+.jm-btn[hidden] {
+  display: none !important;
+}
+
 .jm-btn:focus-visible {
   outline: none;
   /* Inset, not the default outward --jm-ring: an outward ring on a link
