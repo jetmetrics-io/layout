@@ -52,6 +52,11 @@
       btn.href = "https://джетметрикс.рф/hub";
     });
 
+    // Залогиненному регистрация не нужна
+    [document.getElementById("jm-header-signup"), document.getElementById("jm-header-mobile-signup")].forEach(function (btn) {
+      if (btn) btn.hidden = true;
+    });
+
     function logout(e) {
       e.preventDefault();
       Object.keys(localStorage)
